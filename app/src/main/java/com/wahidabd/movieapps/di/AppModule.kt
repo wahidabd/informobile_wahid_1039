@@ -1,5 +1,6 @@
 package com.wahidabd.movieapps.di
 
+import com.wahidabd.movieapps.data.network.MovieApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,8 +16,12 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideApi(): Retrofit = Retrofit.Builder()
+    fun provideRetrofit(): Retrofit = Retrofit.Builder()
         .baseUrl("URL")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    @Provides
+    fun provideApi(retrofit: Retrofit): MovieApi =
+        retrofit.create(MovieApi::class.java)
 }
