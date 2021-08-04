@@ -1,6 +1,8 @@
 package com.wahidabd.movieapps.di
 
 import com.wahidabd.movieapps.data.network.MovieApi
+import com.wahidabd.movieapps.data.repository.MovieRepository
+import com.wahidabd.movieapps.data.source.MovieDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,4 +26,12 @@ object AppModule {
     @Provides
     fun provideApi(retrofit: Retrofit): MovieApi =
         retrofit.create(MovieApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideMovieDataSource(api: MovieApi) = MovieDataSource(api)
+
+    @Singleton
+    @Provides
+    fun provideMovieRepository(movieDataSource: MovieDataSource) = MovieRepository(movieDataSource)
 }
