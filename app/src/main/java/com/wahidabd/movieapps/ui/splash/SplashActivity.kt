@@ -1,10 +1,12 @@
-package com.wahidabd.movieapps.ui
+package com.wahidabd.movieapps.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.wahidabd.movieapps.databinding.ActivitySplashBinding
+import com.wahidabd.movieapps.ui.movie.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -15,8 +17,8 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
-        }, 1200)
+        }, 1000)
     }
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ui.DetailActivity">
+    tools:context=".ui.detail.DetailActivity">
 
     <ImageView
         android:id="@+id/img_item_preview"
@@ -17,10 +17,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/back_drop" />
+        tools:src="@drawable/back_drop" />
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:contentDescription="@string/image_preview_darker"
@@ -72,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/image_preview"
-            android:src="@drawable/poster_path"
+            tools:src="@drawable/poster_path"
             android:scaleType="center" />
     </androidx.cardview.widget.CardView>
 

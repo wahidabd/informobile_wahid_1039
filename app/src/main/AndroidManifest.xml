@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MovieApps"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
 
             <intent-filter>
@@ -25,10 +25,10 @@
         </activity>
 
         <activity
-            android:name=".ui.DetailActivity"
+            android:name=".ui.detail.DetailActivity"
             android:exported="true" />
 
-        <activity android:name=".ui.MainActivity"/>
+        <activity android:name=".ui.movie.MainActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
